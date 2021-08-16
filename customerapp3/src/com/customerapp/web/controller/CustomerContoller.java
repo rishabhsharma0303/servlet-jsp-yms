@@ -25,15 +25,20 @@ import com.mysql.cj.xdevapi.PreparableStatement;
 
 public class CustomerContoller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private CustomerService customerService=new CustomerServiceImpl();
-	
+	private CustomerService customerService = new CustomerServiceImpl();
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
+	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		//log4j
-		
+		// log4j
+
 		response.setContentType("text/html");
-		
+
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
 		String mobile = request.getParameter("mobile");
@@ -41,20 +46,19 @@ public class CustomerContoller extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 
-		Customer customer=new Customer(name, address, mobile, email);
-		
-		try{
+		Customer customer = new Customer(name, address, mobile, email);
+
+		try {
 			customerService.addCustomer(customer);
-		}catch(DataAccessException ex) {
+		} catch (DataAccessException ex) {
 			System.out.println(ex.getMessage());
 		}
-		//Double form submission problem
-//		RequestDispatcher rd=request.getRequestDispatcher("success.jsp");
-//		request.setAttribute("customer", customer);
+		// Double form submission problem
+//		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/jsp/success.jsp");
 //		
 //		rd.forward(request, response);
-		
-		response.sendRedirect("success.jsp");
+
+		response.sendRedirect("success");
 
 	}
 

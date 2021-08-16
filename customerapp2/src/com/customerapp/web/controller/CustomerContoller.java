@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.*;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -48,13 +47,13 @@ public class CustomerContoller extends HttpServlet {
 		}catch(DataAccessException ex) {
 			System.out.println(ex.getMessage());
 		}
-		//Double form submission problem
-//		RequestDispatcher rd=request.getRequestDispatcher("success.jsp");
-//		request.setAttribute("customer", customer);
-//		
-//		rd.forward(request, response);
 		
-		response.sendRedirect("success.jsp");
+		out.print("you are registred" + "<br/>");
+		out.print("Name: "+ name + "<br/>");
+		
+		out.print("address: "+ address + "<br/>");
+		out.print("mobile: "+ mobile + "<br/>");
+		out.print("email: "+ email + "<br/>");
 
 	}
 

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>app</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>myname</servlet-name>
+    <servlet-class>com.demo.Hello</servlet-class>
+    <init-param>
+      <param-name>fileLocation</param-name>
+      <param-value>/home/raj/Desktop/file_loc/</param-value>
+    </init-param>
+      <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>myname</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Hello2</servlet-name>
+    <servlet-class>com.demo.Hello2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Hello2</servlet-name>
+    <url-pattern>/hello2</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>adminEmail</param-name>
+    <param-value>rgutpa.mtech@gmail.com</param-value>
+  </context-param>
+  
+  <servlet>
+    <servlet-name>Hello3</servlet-name>
+    <servlet-class>com.demo.Hello3</servlet-class>
+    <!-- hey container pl create the object of this servlet as soon as container start -->
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Hello3</servlet-name>
+    <url-pattern>/hello3</url-pattern>
+  </servlet-mapping>
+</web-app>
