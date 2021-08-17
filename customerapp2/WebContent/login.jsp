@@ -7,6 +7,9 @@
 <title>login page</title>
 </head>
 <body>
+${param.error}<br/>
+${param.message }<br/>
+
 <form action="login" method="post">
 	Enter name :<input type="text" name="username"><br/>
 	Enter paswrod :<input type="password" name="password"><br/>

@@ -16,10 +16,5 @@ public class S1 extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		out.print("inside servlet S1"+"<br/>");
-		RequestDispatcher rd=request.getRequestDispatcher("https://www.google.co.in/");
-		rd.forward(request, response);
-		
-		//response.sendRedirect("S2");;
 	}
-
 }

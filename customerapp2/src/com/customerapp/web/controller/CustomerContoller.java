@@ -28,6 +28,11 @@ public class CustomerContoller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CustomerService customerService=new CustomerServiceImpl();
 	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		response.sendRedirect("register.jsp");
+	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

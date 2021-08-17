@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="addCustomer" method="post">
+<form action="customerController.do" method="post">
 	Name: <input name="name" /> <br>
 	Address: <textarea name="address" rows="4" cols="20"></textarea> <br>
 	Mobile: <input name="mobile" size="9" /> <br>

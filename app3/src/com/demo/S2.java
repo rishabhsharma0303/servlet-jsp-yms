@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import sun.awt.RepaintArea;
+
 public class S2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
@@ -16,8 +18,9 @@ public class S2 extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		out.print("inside servlet S2"+"<br/>");
-		RequestDispatcher rd=request.getRequestDispatcher("S3");
-		rd.include(request, response);
+		//response.sendRedirect("S3.do");
+		request.getRequestDispatcher("S3.do").forward(request, response);
+		
 	}
 
 }

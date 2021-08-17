@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.customerapp.dao.User;
 import com.customerapp.dao.UserDao;
@@ -24,11 +25,12 @@ public class LoginController extends HttpServlet {
 		
 		try{
 			User user=userDao.getUser(username, password);
-			RequestDispatcher rd=request.getRequestDispatcher("home.jsp");
-			rd.forward(request, response);
+			HttpSession httpSession=request.getSession();
+			httpSession.setAttribute("user", user);
+			response.sendRedirect("customerController.do");
 			
 		}catch(UserNotFoundException ex) {
-			response.sendRedirect("login.jsp");
+			response.sendRedirect("login.jsp?error=login failed");
 		}
 		
 	}
