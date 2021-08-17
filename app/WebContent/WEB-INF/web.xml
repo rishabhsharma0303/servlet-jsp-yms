@@ -11,6 +11,11 @@
       <param-name>fileLocation</param-name>
       <param-value>/home/raj/Desktop/file_loc/</param-value>
     </init-param>
+     <init-param>
+      <param-name>info</param-name>
+      <param-value>servlet 1</param-value>
+    </init-param>
+    
       <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>

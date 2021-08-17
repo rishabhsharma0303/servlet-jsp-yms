@@ -8,11 +8,13 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.*;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.customerapp.dao.Customer;
 import com.customerapp.dao.CustomerDao;
@@ -48,12 +50,22 @@ public class CustomerContoller extends HttpServlet {
 			System.out.println(ex.getMessage());
 		}
 		
-		out.print("you are registred" + "<br/>");
-		out.print("Name: "+ name + "<br/>");
+//		RequestDispatcher rd=request.getRequestDispatcher("success.jsp");
 		
-		out.print("address: "+ address + "<br/>");
-		out.print("mobile: "+ mobile + "<br/>");
-		out.print("email: "+ email + "<br/>");
+		HttpSession httpSession=request.getSession();
+		
+		httpSession.setAttribute("customer", customer);
+	
+		//trick: spring mvc :flush attribute
+		response.sendRedirect("success.jsp");
+		
+//		
+//		out.print("you are registred" + "<br/>");
+//		out.print("Name: "+ name + "<br/>");
+//		
+//		out.print("address: "+ address + "<br/>");
+//		out.print("mobile: "+ mobile + "<br/>");
+//		out.print("email: "+ email + "<br/>");
 
 	}
 
