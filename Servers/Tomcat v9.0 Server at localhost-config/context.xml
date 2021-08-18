@@ -26,4 +26,20 @@
     <!--
     <Manager pathname="" />
     -->
+    <!-- you configure ur connetion pool here -->
+    <Resource name="jdbc/yms" auth="Container" 
+    		type="javax.sql.DataSource"
+               maxActive="100" 
+               maxIdle="30" 
+               maxWait="10000"
+               username="root" 
+               password="root" 
+               driverClassName="com.mysql.cj.jdbc.Driver"
+               url="jdbc:mysql://localhost:3306/yms21"/>
 </Context>
+
+
+
+
+
+

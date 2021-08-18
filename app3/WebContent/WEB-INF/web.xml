@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>app3</display-name>
+ <!--  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsp</url-pattern>
+      <scripting-invalid>true</scripting-invalid>
+    </jsp-property-group>
+  </jsp-config> -->
+  <servlet>
+    <servlet-name>foo</servlet-name>
+    <jsp-file>/foo.jsp</jsp-file>
+    <init-param>
+      <param-name>email</param-name>
+      <param-value>rgupta.mtech@gmail.com</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>foo</servlet-name>
+    <url-pattern>/abc</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
@@ -20,9 +38,6 @@
     <servlet-name>S2</servlet-name>
     <url-pattern>/S2.do</url-pattern>
   </servlet-mapping>
- 
-  <!-- filter order does meatter in web.xml -->
-     <!-- F2 -->
   <filter>
     <display-name>F2</display-name>
     <filter-name>F2</filter-name>
@@ -36,10 +51,6 @@
     <dispatcher>INCLUDE</dispatcher>
     <dispatcher>ERROR</dispatcher>
   </filter-mapping>
-  
-  
-  
-  <!-- F1 -->
   <filter>
     <filter-name>F1</filter-name>
     <filter-class>com.demo.F1</filter-class>
@@ -48,7 +59,6 @@
     <filter-name>F1</filter-name>
     <url-pattern>*.do</url-pattern>
   </filter-mapping>
-  
   <servlet>
     <description></description>
     <display-name>S3</display-name>
@@ -59,7 +69,24 @@
     <servlet-name>S3</servlet-name>
     <url-pattern>/S3.do</url-pattern>
   </servlet-mapping>
-  
-  
-  
+  <servlet>
+    <description></description>
+    <display-name>Counter</display-name>
+    <servlet-name>Counter</servlet-name>
+    <servlet-class>com.demo.Counter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Counter</servlet-name>
+    <url-pattern>/Counter</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BookController</display-name>
+    <servlet-name>BookController</servlet-name>
+    <servlet-class>com.demo.BookController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookController</servlet-name>
+    <url-pattern>/BookController</url-pattern>
+  </servlet-mapping>
 </web-app>
