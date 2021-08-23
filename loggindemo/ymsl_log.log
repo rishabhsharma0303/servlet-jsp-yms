@@ -1,0 +1,6 @@
+2021-08-23 15:53:50 INFO  Demo:10 - code is working till now 
+2021-08-23 15:53:50 DEBUG Demo:11 - spring container is started
+2021-08-23 15:53:50 ERROR Demo:17 - code fail with exception java.lang.NumberFormatException: For input string: "2323A"
+2021-08-23 15:54:54 INFO  Demo:10 - code is working till now 
+2021-08-23 15:54:54 DEBUG Demo:11 - spring container is started
+2021-08-23 15:54:54 ERROR Demo:17 - code fail with exception java.lang.NumberFormatException: For input string: "2323A"
