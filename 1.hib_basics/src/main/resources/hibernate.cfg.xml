@@ -23,7 +23,7 @@
 			create-drop (test) H2
 			validate( prod)
 		 -->
-		<property name="hibernate.hbm2ddl.auto">validate</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		
 		<!-- jdbc connection pool build in  -->
 		

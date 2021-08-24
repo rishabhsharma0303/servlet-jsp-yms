@@ -5,7 +5,7 @@
 <hibernate-configuration>
 	<session-factory>
 		<!-- database connection setting -->
-		<property name="connection.url">jdbc:mysql://localhost:3306/yms2</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/yms21</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
 		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
@@ -23,7 +23,7 @@
 			create-drop (test) H2
 			validate( prod)
 		 -->
-		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.hbm2ddl.auto">validate</property>
 		
 		<!-- jdbc connection pool build in  -->
 		
@@ -31,7 +31,8 @@
 		
 		<!-- <property name="current_session_context_class">thread</property> -->
 		
-		<mapping class="com.demo.Book" />
+		<mapping class="com.bookapp.model.dao.book.Book" />
+		<mapping class="com.bookapp.model.dao.user.User" />
 				
 	</session-factory>
 </hibernate-configuration>
